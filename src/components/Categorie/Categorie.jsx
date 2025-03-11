@@ -1,0 +1,24 @@
+import "./Categorie.css";
+import Food from "./Food";
+
+const Categorie = ({ data }) => {
+  return (
+    <div className="menu-categories">
+      {data.categories.map((categorie, index) => {
+        if (categorie.meals.length !== 0) {
+          return (
+            <div key={index} className="categorie-food">
+              <h2>{categorie.name}</h2>{" "}
+              <div>
+                {categorie.meals.map((meals) => {
+                  return <Food key={meals.id} meals={meals} />;
+                })}
+              </div>
+            </div>
+          );
+        }
+      })}
+    </div>
+  );
+};
+export default Categorie;

@@ -1,0 +1,14 @@
+header {
+  border-bottom: 1px solid #e9ebeb;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 60px;
+}
+header img {
+  width: 150px;
+}
+header .container {
+  width: 100%;
+  padding-left: 15px;
+}

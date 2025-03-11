@@ -1,0 +1,23 @@
+.card {
+  position: sticky;
+  top: 30px;
+  margin-top: 0.8rem;
+  width: 300px;
+  min-height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+}
+
+@media (max-width: 760px) {
+  .card {
+    position: fixed;
+    bottom: 0;
+    top: inherit;
+    width: 100%;
+    height: 70px;
+    margin-left: -15px;
+    border-radius: 0;
+    box-shadow: 0 -10px 10px 0 rgba(46, 51, 51, 0.07);
+  }
+}

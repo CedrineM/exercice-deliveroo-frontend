@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "./components/Header/Header";
 import "./App.css";
+import Hero from "./components/Hero/Hero";
+import Categorie from "./components/Categorie/Categorie";
+import Card from "./components/Card/Card";
 
 function App() {
   const [data, setData] = useState({});
@@ -23,66 +27,13 @@ function App() {
     <span>En cours de chargement .... </span>
   ) : (
     <>
-      <header>
-        <div className="container-header">
-          <img
-            className="logo"
-            src="src\assets\logo-teal.svg"
-            alt="Deliveroo"
-          />
-        </div>
-      </header>
+      <Header />
+      <Hero data={data} />
       <main>
-        <div>
-          <div className="container">
-            <section className="resto-info">
-              <div>
-                <h1>{data.restaurant.name}</h1>
-                <p>{data.restaurant.description}</p>
-              </div>
-              <div className="col-img">
-                <img src={data.restaurant.picture} alt="Image de brunch" />
-              </div>
-            </section>
-          </div>
-        </div>
         <div className="container">
-          <section className="resto-menu-card">
-            <div className="menu-categories">
-              {data.categories.map((categorie, index) => {
-                if (categorie.meals.length !== 0) {
-                  return (
-                    <div key={index} className="categorie-food">
-                      <h2>{categorie.name}</h2>{" "}
-                      <div>
-                        {categorie.meals.map((meals) => {
-                          return (
-                            <div key={meals.id} className="food">
-                              <div className="food-description">
-                                <h3>{meals.title}</h3>
-                                <p>{meals.description}</p>
-                                <div>
-                                  <span>{meals.price}€</span>
-                                  {meals.popular && (
-                                    <span className="orange">Populaire</span>
-                                  )}
-                                </div>
-                              </div>
-                              {meals.picture && (
-                                <div className="food-picture">
-                                  <img src={meals.picture} alt="" />
-                                </div>
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                }
-              })}
-            </div>
-            <div className="card"></div>
+          <section>
+            <Categorie data={data} />
+            <Card data={data} />
           </section>
         </div>
       </main>
