@@ -1,7 +1,7 @@
 import "./Categorie.css";
 import Food from "./Food";
 
-const Categorie = ({ data }) => {
+const Categorie = ({ data, card, setCard }) => {
   return (
     <div className="menu-categories">
       {data.categories.map((categorie, index) => {
@@ -11,7 +11,14 @@ const Categorie = ({ data }) => {
               <h2>{categorie.name}</h2>{" "}
               <div>
                 {categorie.meals.map((meals) => {
-                  return <Food key={meals.id} meals={meals} />;
+                  return (
+                    <Food
+                      key={meals.id}
+                      meals={meals}
+                      card={card}
+                      setCard={setCard}
+                    />
+                  );
                 })}
               </div>
             </div>

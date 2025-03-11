@@ -9,6 +9,8 @@ import Card from "./components/Card/Card";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [card, setCard] = useState([]);
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -32,8 +34,8 @@ function App() {
       <main>
         <div className="container">
           <section>
-            <Categorie data={data} />
-            <Card data={data} />
+            <Categorie data={data} card={card} setCard={setCard} />
+            <Card card={card} isDisabled={isDisabled} />
           </section>
         </div>
       </main>
