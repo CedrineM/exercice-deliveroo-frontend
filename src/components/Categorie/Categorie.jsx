@@ -1,7 +1,14 @@
 import "./Categorie.css";
 import Food from "./Food";
 
-const Categorie = ({ data, card, setCard }) => {
+const Categorie = ({
+  data,
+  card,
+  setCard,
+  subtotal,
+  setSubtotal,
+  setIsDisable,
+}) => {
   return (
     <div className="menu-categories">
       {data.categories.map((categorie, index) => {
@@ -17,6 +24,9 @@ const Categorie = ({ data, card, setCard }) => {
                       meals={meals}
                       card={card}
                       setCard={setCard}
+                      subtotal={subtotal}
+                      setSubtotal={setSubtotal}
+                      setIsDisable={setIsDisable}
                     />
                   );
                 })}

@@ -1,14 +1,25 @@
 import foodLogo from "../../assets/food_icon.png";
 
-const Food = ({ meals, card, setCard }) => {
+const Food = ({
+  meals,
+  card,
+  setCard,
+  subtotal,
+  setSubtotal,
+  setIsDisable,
+}) => {
   const handleAddToCardOnClick = () => {
     const newCard = [...card];
-    newCard.push({
-      name: meals.name,
-      price: toNumber(meals.price),
-      quantity: 1,
-    });
+    const index = newCard.indexOf(meals);
+    if (index === -1) {
+      newCard.push(meals);
+      newCard[newCard.length - 1].quantity = 1;
+    } else {
+      newCard[index].quantity += 1;
+    }
+    setSubtotal(Math.round((subtotal + Number(meals.price)) * 100) / 100);
     setCard(newCard);
+    setIsDisable(false);
   };
 
   return (

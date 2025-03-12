@@ -11,6 +11,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
   const [card, setCard] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -34,8 +35,21 @@ function App() {
       <main>
         <div className="container">
           <section>
-            <Categorie data={data} card={card} setCard={setCard} />
-            <Card card={card} isDisabled={isDisabled} />
+            <Categorie
+              data={data}
+              card={card}
+              setCard={setCard}
+              subtotal={subtotal}
+              setSubtotal={setSubtotal}
+              setIsDisable={setIsDisabled}
+            />
+            <Card
+              card={card}
+              setCard={setCard}
+              isDisabled={isDisabled}
+              subtotal={subtotal}
+              setSubtotal={setSubtotal}
+            />
           </section>
         </div>
       </main>

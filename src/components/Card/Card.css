@@ -2,7 +2,7 @@
   position: sticky;
   top: 30px;
   margin-top: 0.8rem;
-  width: 300px;
+  width: 350px;
   min-height: 300px;
   background-color: white;
   border-radius: 5px;
@@ -19,12 +19,95 @@
   font-weight: bold;
   font-size: 1rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .card button:disabled {
   cursor: not-allowed;
   background-color: #bac3c3;
   color: #8b9b9b;
+}
+
+.card-meals {
+  overflow-y: scroll;
+  max-height: 300px;
+  border-bottom: 1px solid #8b9b9b;
+}
+
+.meals-quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.meals-quantity span:nth-child(odd) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00cdbc;
+  font-weight: bolder;
+  border-radius: 50%;
+  padding-bottom: 2px;
+  width: 20px;
+  height: 20px;
+  border: #00cdbc 2px solid;
+}
+
+.meals-quantity span:nth-child(even) {
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.card-meals > div {
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  margin: 15px 0px;
+  align-items: center;
+}
+
+.card-meals > div > span:nth-child(even) {
+  flex: 3;
+}
+
+.card-meals > div > span:nth-child(odd) {
+  flex: 1;
+}
+
+.card-subtotal {
+  border-bottom: 1px solid #8b9b9b;
+  padding: 15px 0px;
+}
+
+.card-subtotal > div:first-child {
+  margin-bottom: 15px;
+}
+
+.card-subtotal > div {
+  display: flex;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
+.card-total {
+  padding: 15px 0px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 @media (max-width: 760px) {
