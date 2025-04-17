@@ -53,6 +53,21 @@
   border: #00cdbc 2px solid;
 }
 
+/* Style pour les boutons + et - */
+.quantity-button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quantity-button:hover {
+  background-color: #00cdbc;
+  color: white !important;
+}
+
+.quantity-button:active {
+  transform: scale(0.95);
+}
+
 .meals-quantity span:nth-child(even) {
   font-weight: bold;
 }
